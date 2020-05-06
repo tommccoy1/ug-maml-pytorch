@@ -304,4 +304,26 @@ def train_ex(inp, outp, model, lr=0.01):
     
     return preds
 
+# Load a language that is just Cs and Vs
+def load_dataset(dataset_file):
+    fi = open(dataset_file, "r")
 
+    langs = []
+    for line in fi:
+        parts = line.strip().split("\t")
+
+        train_set = [elt.split(",") for elt in parts[0].split()]
+        dev_set = [elt.split(",") for elt in parts[1].split()]
+        test_set = [elt.split(",") for elt in parts[2].split()]
+        vocab = parts[3].split()
+        key_string = parts[4].split(",")
+
+        v_list = key_string[0].split()
+        c_list = key_string[1].split()
+        ranking = [int(x) for x in key_string[2].split()]
+
+        key = [v_list, c_list, ranking]
+
+        langs.append([train_set, dev_set, test_set, vocab, key])
+
+    return langs
