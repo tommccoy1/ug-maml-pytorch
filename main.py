@@ -280,8 +280,7 @@ def to_eos(output):
 # meta: True if this is being called as part of metatraining; False otherwise
 # lr_inner: learning rate
 # batch_size: the batch size
-def train_ex(inp, outp, model, lr=0.01):
-    this_test_set = [["rOau",".rO.a.u."], ["axxaO",".a.xa.O."], ["rxxa",".xa."], ["axrxu",".a.xu."], ["ttxaO",".xa.O."], ["Ouuut",".O.u.u.u."], ["rutOu",".ru.tO.u."], ["tOaux",".tO.a.u."], ["xttax",".ta."], ["xuxut",".xu.xu."]]
+def train_ex(inp, outp, model, lr=0.01, this_test_set=[["rOau",".rO.a.u."], ["axxaO",".a.xa.O."], ["rxxa",".xa."], ["axrxu",".a.xu."], ["ttxaO",".xa.O."], ["Ouuut",".O.u.u.u."], ["rutOu",".ru.tO.u."], ["tOaux",".tO.a.u."], ["xttax",".ta."], ["xuxut",".xu.xu."]]):
     
     optimizer = optim.SGD(model.params(), lr=lr)
     
