@@ -5,10 +5,7 @@ import torch.nn.functional as F
 from torch.autograd import Variable as V
 import random
 
-from models import *
 from utils import *
-from phonology_task_creation import *
-from load_data import *
 
 # Compute the loss and accuracy for a single batch
 def get_loss(model, batch, criterion):
