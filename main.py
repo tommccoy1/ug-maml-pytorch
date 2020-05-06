@@ -6,7 +6,7 @@ from torch.autograd import Variable as V
 import random
 from random import shuffle
 from collections import OrderedDict
-
+from torch import optim
 
 # Redefine a basic PyTorch model to allow
 # for double gradients and manual modification
