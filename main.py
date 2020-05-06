@@ -257,11 +257,14 @@ class EncoderDecoder(ModifiableModule):
         self.ind2char = ind2char
 
 
-def set_params():
+def set_params(modeltype):
     
     encdec = EncoderDecoder(34,10,256)
 
-    encdec.load_state_dict(torch.load("maml_yonc_256_5.weights"))
+    if modeltype == "maml":
+        encdec.load_state_dict(torch.load("maml_yonc_256_5.weights"))
+    else:
+        encdec.load_state_dict(torch.load("random_yonc_256_5.weights"))
     
     encdec.set_dicts("a e i o u A E I O U b c d f g h j k l m n p q r s t v w x z .".split())
 
